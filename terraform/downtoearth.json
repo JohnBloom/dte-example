@@ -1,0 +1,39 @@
+{
+  "Name": "wordvice",
+  "Description": "An edgy blog hosting site",
+  "AccountNumber": "758808922724",
+  "LambdaZip": "dist/dist.zip",
+  "LambdaHandler": "lambda_handler.handle_event",
+  "LambdaRuntime": "python2.7",
+  "AuthType": "None",
+  "Roles": {
+    "Default": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "logs:CreateLogGroup",
+              "logs:CreateLogStream",
+              "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:*"
+            ],
+            "Resource": "arn:aws:dynamodb:*:*:*"
+          }
+        ]
+      }
+  },
+  "Defaults":{
+
+  },
+  "Api":{
+      "/wordvice/posts": ["GET", "POST"],
+      "/wordvice/posts/{date}": ["GET"]
+  }
+}
