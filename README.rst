@@ -18,8 +18,32 @@ Running the sample
 ===========
 
 * Create and activate a python virtual env.
-* Pull down the requirements `pip install -r requirements.txt`
-* Clone the repo `git clone git@github.com:JohnBloom/dte-example.git`
-* Build the api terraform `make build-tf`
-* Run a plan `make plan-tf`
-* If everything looks good apply the plan `make apply-tf`
+.. code-block:: bash
+   
+   virtualenv -p /usr/bin/python2.7 venv
+   source venv/bin/activate
+   
+* Clone the repo:
+.. code-block:: bash
+
+   git clone git@github.com:JohnBloom/dte-example.git
+
+* Pull down the requirements:
+.. code-block:: bash
+
+   pip install -r requirements.txt
+   
+* Build the api terraform:
+.. code-block:: bash
+
+   make build-tf
+   
+* Run a plan:
+.. code-block:: bash
+
+   make plan-tf
+   
+* If everything looks good apply the plan:
+.. code-block:: bash
+
+   make apply-tf
